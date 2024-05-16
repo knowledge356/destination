@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONGRATULATON</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">CONGRATULATION</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="hero">
+            <h1>Welcome to the destination</h1>
+            <p>Thank you for working hard</p>
+            <a href="https://colorhunt.co/" id="generate-code-link" onclick="return generateCode()">Click here to generate code and come back to the same page</a>
+            <p>Generated Code: <span id="generated-code">None</span></p>
+        </div>
+    </header>
+    <main>
+        <section class="features">
+            <div class="feature-item">
+                <h2>EARN MONEY</h2>
+                <p>Some description about the feature.</p>
+            </div>
+            <div class="feature-item">
+                <h2>FREE WEB</h2>
+                <p>Some description about the feature.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Company</p>
+    </footer>
+    <script>
+        function generateCode() {
+            // Store the current timestamp in localStorage
+            localStorage.setItem('clickTimestamp', Date.now());
+        }
+
+        // Check if the user is returning from the link
+        window.onload = function() {
+            const timestamp = localStorage.getItem('clickTimestamp');
+            const currentTime = Date.now();
+            const timeElapsed = currentTime - timestamp;
+
+            // Check if the user returned after 3 seconds
+            if (timestamp && timeElapsed >= 1000) {
+                document.getElementById('generated-code').innerText = '3560';
+                // Remove the timestamp from localStorage
+                localStorage.removeItem('clickTimestamp');
+            }
+        }
+
+    </script>
+</body>
+</html>
